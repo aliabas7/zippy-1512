@@ -8,7 +8,7 @@ This is a python program that uses boto3 to let you create, start, list, stop an
 
 **Installation**
 
-pip3 install s3/zippy-1512 (Link will be available soon)
+            pip3 install s3/zippy-1512 (Link will be available soon)
 
 **Running**
 
@@ -24,6 +24,7 @@ pip3 install s3/zippy-1512 (Link will be available soon)
 
 tag is optional
 To make managin them easy, instances created with zippy have a default tag of TagName: tag and TagValue: boto. So, if you just want to terminate instnaces created with zippy, you can run below command:
+
             zippy terminate --tag boto
 
 **Using Wrapper script**
