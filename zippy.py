@@ -66,7 +66,7 @@ def list_instances(tag, default=None):
     instances = filter_instances(tag)
 
     for i in instances:
-        print(i.id, i.state["Name"], i.instance_type, i.public_dns_name)
+        print(i.id, i.state["Name"], i.instance_type)
 
 
 @instances.command("stop")

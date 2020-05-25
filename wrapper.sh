@@ -1,13 +1,13 @@
 #!/bin/bash
 
-AL2="ami-09edd32d9b0990d49"
+AL2="ami-09edd32d9b0990d49" #Amazon Linux 2 for us-east-1, pulease update this value
 INSTANCE_TYPE="t3.large"
-KEY_NAME="$1"
-KEY_PATH="$2"
+KEY_NAME="$1" #Key name in your aws account
+KEY_PATH="$2" #Full path to the key on your local machine
 
 echo "Creating instance..."
 
-pub_ip=$(/usr/local/bin/python3 /Users/ssyedabb/Desktop/repos/ssyedabb/ssyedabb/ssyedabb.py create "$AL2" "$INSTANCE_TYPE" "$KEY_NAME")
+pub_ip=$(/usr/local/bin/python3 /Users/ssyedabb/Desktop/repos/zippy/zippy/zippy.py create "$AL2" "$INSTANCE_TYPE" "$KEY_NAME")
 
 echo "Instance created, sshing..."
 

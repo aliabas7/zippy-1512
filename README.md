@@ -12,13 +12,19 @@ pip3 install s3/zippy-1512 (Link will be available soon)
 
 **Running**
 
-zippy --help 
-zippy [OPTIONS] COMMAND [ARGS]
-zippy create image_id instance_type key_name
-zippy list --tag tag_value
-zippy start --tag tag_value
-zippy stop --tag tag_value
-zippy terminate --tag tag_value
+            zippy --help 
+            zippy [OPTIONS] COMMAND [ARGS]
+            zippy create image_id instance_type key_name
+            zippy list --tag tag_value
+            zippy start --tag tag_value
+            zippy stop --tag tag_value
+            zippy terminate --tag tag_value
+
+*Notes:*
+
+tag is optional
+To make managin them easy, instances created with zippy have a default tag of TagName: tag and TagValue: boto. So, if you just want to terminate instnaces created with zippy, you can run below command:
+            zippy terminate --tag boto
 
 **Using Wrapper script**
 
@@ -28,7 +34,7 @@ The bash script lets you create a new instance and ssh into it with a single com
 
 Example usage
 
-./wrapper mykey ~/.ssh/mykey.pem
+./wrapper.sh mykey ~/.ssh/mykey.pem
 
 You can edit the variables (AL2, INSTANCE_TYPE, and also hard code the value for SSH_KEY) to further customize the wrapper.
 
