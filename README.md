@@ -27,13 +27,13 @@ To make managin them easy, instances created with zippy have a default tag of Ta
 
             zippy terminate --tag boto
 
-**Using Wrapper script**
+**Wrapper script**
 
 To create an instance, you can run zippy create command, however, it's recommended to use the wrapper.sh script. 
 
 The bash script lets you create a new instance and ssh into it with a single command from terminal. It requires two arguments, the first one must be the name of the ssh key in your AWS account and the second must be the location of the ssh key on your machine. It creates an EC2 instance using the AL2 (us-east-1) and creates a t3.large instance.
 
-Example usage
+Usage:
 
 ./wrapper.sh mykey ~/.ssh/mykey.pem
 
@@ -41,4 +41,4 @@ You can edit the variables (AL2, INSTANCE_TYPE, and also hard code the value for
 
 *Windows users:*
 
-Either get yourself a mac or user WSL.
+Either user WSL or go get yourself a mac.
