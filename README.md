@@ -35,7 +35,7 @@ The bash script lets you create a new instance and ssh into it with a single com
 
 Usage:
 
-./wrapper.sh mykey ~/.ssh/mykey.pem
+            ./wrapper.sh mykey ~/.ssh/mykey.pem
 
 You can edit the variables (AL2, INSTANCE_TYPE, and also hard code the value for SSH_KEY) to further customize the wrapper.
 
