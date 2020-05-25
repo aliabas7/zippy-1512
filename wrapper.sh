@@ -5,6 +5,11 @@ INSTANCE_TYPE="t3.large"
 KEY_NAME="$1" #Key name in your aws account
 KEY_PATH="$2" #Full path to the key on your local machine
 
+if [ "$KEY_NAME" = "" ] || [ "$KEY_PATH" = "" ]; then
+    echo "Please enter two arguments: key name in your aws account and full path to the key on your local machine"
+    exit 1
+fi
+
 echo "Creating instance..."
 
 pub_ip=$(/usr/local/bin/python3 /Users/ssyedabb/Desktop/repos/zippy/zippy/zippy.py create "$AL2" "$INSTANCE_TYPE" "$KEY_NAME")

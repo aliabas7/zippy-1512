@@ -4,7 +4,6 @@
 import boto3
 import botocore
 import click
-import time
 
 session = boto3.Session()
 ec2 = session.resource("ec2")
@@ -76,7 +75,7 @@ def stop_instances(tag):
     instances = filter_instances(tag)
 
     for i in instances:
-        print(f"Stopping instance{i.id}")
+        print(f"Stopping instance {i.id}")
         try:
             i.stop()
         except botocore.exceptions.ClientError as e:
