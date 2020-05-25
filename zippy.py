@@ -10,12 +10,6 @@ ec2 = session.resource("ec2")
 client = boto3.client("ec2")
 
 
-def await_instance_startup(instance_id):
-    """Wait for instance to start running."""
-    waiter = client.get_waiter("instance_running")
-    waiter.wait(InstanceIds=[instance_id], WaiterConfig={"Delay": 2, "MaxAttempts": 20})
-
-
 def filter_instances(tag):
 
     if tag:
