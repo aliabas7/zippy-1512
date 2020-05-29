@@ -18,7 +18,7 @@ This is a python program that uses boto3 to let you create, start, list, stop an
 ## Running
 
             zippy --help 
-            zippy [OPTIONS] COMMAND [ARGS]
+            zippy COMMAND [ARGS]
             zippy create image_id instance_type key_name
             zippy list --tag tag_value
             zippy start --tag tag_value
