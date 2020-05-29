@@ -8,7 +8,7 @@ This is a python program that uses boto3 to let you create, start, list, stop an
 
 **Installation**
 
-            pip3 install https://ali-spython-stuff.s3.amazonaws.com/zippy_1512-0.1-py3-none-any.whl 
+            sudo pip3 install https://ali-spython-stuff.s3.amazonaws.com/zippy_1512-0.1-py3-none-any.whl 
 
 **Running**
 
