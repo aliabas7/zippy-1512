@@ -47,3 +47,7 @@ You can edit the variables (AL2, INSTANCE_TYPE, and also hard code the value for
 *Windows users:*
 
 Either user WSL or go get yourself a mac.
+
+## Uninstalling zippy
+          
+          pip3 uninstall zippy-1512
