@@ -28,7 +28,7 @@ This is a python program that uses boto3 to let you create, start, list, stop an
 *Notes:*
 
 tag is optional
-To make managin them easy, instances created with zippy have a default tag of TagName: tag and TagValue: boto. So, if you just want to terminate instnaces created with zippy, you can run below command:
+To make managing them simple, instances created with zippy have a default tag of TagName: tag and TagValue: boto. So, if you just want to terminate instnaces created with zippy, you can run below command:
 
             zippy terminate --tag boto
 
