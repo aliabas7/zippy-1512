@@ -6,15 +6,20 @@ import botocore
 import click
 
 session = boto3.Session()
-ec2 = session.resource("ec2")
-client = boto3.client("ec2")
+
+try:
+    ec2 = session.resource("ec2")
+    client = boto3.client("ec2")
+except botocore.exceptions.NoRegionError:
+    print("Please make sure you have AWS profile configured with a default region")
+    raise SystemExit(0)
 
 
 def filter_instances(tag):
 
     if tag:
         instances = ec2.instances.filter(
-            Filters=[{"Name": "tag:tag", "Values": [tag,]}]
+            Filters=[{"Name": "tag:tag", "Values": [tag, ]}]
         )
     else:
         instances = ec2.instances.all()
@@ -41,7 +46,8 @@ def create_instances(image_id, instance_type, key_name):
         MaxCount=1,
         KeyName=key_name,
         TagSpecifications=[
-            {"ResourceType": "instance", "Tags": [{"Key": "tag", "Value": "boto"},]}
+            {"ResourceType": "instance", "Tags": [
+                {"Key": "tag", "Value": "boto"}, ]}
         ],
     )
 
