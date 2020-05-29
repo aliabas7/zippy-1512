@@ -7,7 +7,7 @@ KEY_PATH="$2" #Full path to the key on your local machine, hardcode the key if y
 
 if [ "$KEY_NAME" = "" ] || [ "$KEY_PATH" = "" ]; then
     echo "Please enter key name and full path to the key on your local machine:"
-    echo "./wrapper.sh keyname /keypath"
+    echo "./wrapper.sh keyname /key/path"
     exit 1
 fi
 
@@ -16,7 +16,7 @@ echo "Creating instance..."
 pub_ip=$(/usr/local/bin/python3 /Users/ssyedabb/Desktop/repos/zippy/zippy/zippy.py create "$AMI" "$INSTANCE_TYPE" "$KEY_NAME")
 
 if [ "$pub_ip" = "" ]; then
-    echo "Something went wrong, see above error"
+    echo "Something went wrong, try again"
     exit 1
 fi
 
