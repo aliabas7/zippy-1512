@@ -13,7 +13,7 @@ fi
 
 echo "Creating instance..."
 
-pub_ip=$(/usr/local/bin/python3 zippy.py create "$AMI" "$INSTANCE_TYPE" "$KEY_NAME")
+pub_ip=$(zippy create "$AMI" "$INSTANCE_TYPE" "$KEY_NAME")
 
 if [ "$pub_ip" = "" ]; then
     echo "Something went wrong, try again"
