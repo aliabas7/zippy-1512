@@ -8,7 +8,7 @@ This is a python program that uses boto3 to let you create, start, list, stop an
 
 ## Prerequisites
 
-  - Python 3.4, or a later version[https://wiki.python.org/moin/BeginnersGuide/Download]
+  - Python 3.4, or a later version [https://wiki.python.org/moin/BeginnersGuide/Download]
   - AWS Profile configured which must have a default region 
 
 ## Installation
