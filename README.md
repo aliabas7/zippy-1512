@@ -4,7 +4,7 @@ Manage your EC2 instances from CLI with Zippy.
 
 ## Description
 
-This is a python program that uses boto3 to let you create, start, list, stop and terminate Amazon EC2 instances from CLI. The program uses credentials configured in your aws profile.
+Zippy is a python program that uses boto3 to let you create, start, list, stop and terminate Amazon EC2 instances from CLI. The program uses credentials configured in your aws profile.
 
 ## Prerequisites
 
