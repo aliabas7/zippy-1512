@@ -15,7 +15,11 @@ echo "Creating instance..."
 
 pub_ip=$(zippy create "$AMI" "$INSTANCE_TYPE" "$KEY_NAME")
 
-if [ "$pub_ip" = "" ]; then
+if [ "$pub_ip" = "No default subnet found, this program only runs when you have default subnets in your VPC" ]; then
+    echo "$pub_ip"
+    exit 1
+
+elif [ "$pub_ip" = "" ]; then
     echo "Something went wrong, try again"
     exit 1
 fi

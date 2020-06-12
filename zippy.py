@@ -40,7 +40,7 @@ def create_instances(image_id, instance_type, key_name):
     """ Create a brand new EC2 instance. """
 
     try:
-            print ("Spinning up instance ...")
+ 
             instances = ec2.create_instances(
             ImageId=image_id,
             InstanceType=instance_type,
