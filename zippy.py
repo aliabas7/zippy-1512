@@ -39,17 +39,23 @@ def instances():
 def create_instances(image_id, instance_type, key_name):
     """ Create a brand new EC2 instance. """
 
-    instances = ec2.create_instances(
-        ImageId=image_id,
-        InstanceType=instance_type,
-        MinCount=1,
-        MaxCount=1,
-        KeyName=key_name,
-        TagSpecifications=[
-            {"ResourceType": "instance", "Tags": [
-                {"Key": "tag", "Value": "boto"}, ]}
-        ],
-    )
+    try:
+            print ("Spinning up instance ...")
+            instances = ec2.create_instances(
+            ImageId=image_id,
+            InstanceType=instance_type,
+            MinCount=1,
+            MaxCount=1,
+            KeyName=key_name,
+            TagSpecifications=[
+                {"ResourceType": "instance", "Tags": [
+                    {"Key": "tag", "Value": "boto"}, ]}
+            ],
+        )
+        
+    except botocore.exceptions.ClientError:
+        print ("No default subnet found, this program only runs when you have default subnets in your VPC")
+        raise SystemExit(0)
 
     instance = instances[0]
     instance.wait_until_running()
@@ -63,6 +69,7 @@ def list_instances(tag, default=None):
     """List instances in your account"""
 
     instances = filter_instances(tag)
+    print ("\nINSTANCE ID \t    STATUS     TYPE")
 
     for i in instances:
         print(i.id, i.state["Name"], i.instance_type)
